@@ -1,0 +1,27 @@
+[project]
+name = "capproj"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "sais888",email = "saisatya.bv04@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django (>=5.1.6,<6.0.0)",
+    "django-allauth[socialaccount] (>=65.4.1,<66.0.0)",
+    "psycopg (>=3.2.6,<4.0.0)",
+    "dj-database-url (>=2.3.0,<3.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "capproj", from = "src"}]
+
+
+[tool.poetry.group.dev.dependencies]
+django-debug-toolbar = "^5.0.1"
+django-browser-reload = "^1.18.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
