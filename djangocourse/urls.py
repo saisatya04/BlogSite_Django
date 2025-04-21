@@ -27,5 +27,5 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("", RedirectView.as_view(pattern_name="home")),
     path("__debug__/", include("debug_toolbar.urls")),
-    path("__reload__/", include("debug_browser_reload.urls")),
+    path("__reload__/", include("django_browser_reload.urls")),
 ]

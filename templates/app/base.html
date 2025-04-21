@@ -18,17 +18,25 @@
   <body>
     <nav class="px-10 py-4 border-b border-gray-300 shadow-md">
       <ul>
-        <li><a href="{% url 'home' %}">Articles</a></li>
-        <li>
-          {% if user.is_authenticated %}
-          <form method="POST" action="{% url 'account_logout' %}">
-            {% csrf_token %}
-            <button type="submit">Logout</button>
-          </form>
-          {% else %}
-          <a href="{% url 'account_login' %}">Login</a>
-          {% endif %}
-        </li>
+        <a href="{% url 'home' %}">Articles</a>
+        {% if user.is_authenticated %}
+        <a class="button primary text-sm" href="{% url 'create_article' %}"
+          >Create new</a
+        >
+        <a class="" href="{% url 'create_article' %}">Create new</a>
+        <a class="" href="{% url 'create_article' %}">Change email</a>
+        <form method="POST" action="{% url 'account_logout' %}">
+          {% csrf_token %}
+          <button type="submit">Logout</button>
+        </form>
+        {% else %}
+        <a class="button primary text-sm" href="{% url 'account_login' %}"
+          >Login</a
+        >
+        <a class="button secondary text-sm" href="{% url 'account_signup' %}"
+          >Sign Up</a
+        >
+        {% endif %}
       </ul>
     </nav>
     {% block content %} {% endblock content %}
