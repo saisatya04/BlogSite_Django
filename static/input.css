@@ -30,3 +30,21 @@
 .danger {
   @apply rounded-md border border-red-400 bg-red-200 px-4 py-2 font-medium text-red-800 hover:bg-red-300 focus:ring-2 focus:ring-red-200 focus:ring-offset-2 focus:outline-none;
 }
+
+.EasyMDEContainer, textarea {
+  @apply rounded-md border-gray-200 border-2 text-base leading-6;
+}
+
+.EasyMDEContainer, .CodeMirror, textarea {
+  @apply !border-none !bg-inherit;
+}
+
+.EasyMDEContainer:has(textarea:focus), textarea:focus {
+  @apply ring-1 ring-emerald-500 border-emerald-500;
+}
+
+.form_field input {
+  @apply p-2 rounded-md w-full;
+}
+
+

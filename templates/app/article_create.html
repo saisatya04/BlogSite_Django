@@ -1,12 +1,6 @@
-{% extends "app/layouts/base_form.html" %} {% block content %}
-
-<h1>Create Article</h1>
-<form method="POST">
-  {% csrf_token %}
-  <!-- security -->
-  {{ form.as_p }}
-  <!-- to display the form -->
-  <button type="submit">save</button>
-</form>
-<a href="{% url 'home' %}">Back to List</a>
-{% endblock content %}
+{% extends "app/layouts/base_form.html" %} 
+{% block buttons %}
+<div class="flex justify-end">
+  <button type="submit" class="button primary">Save</button>
+</div>
+{% endblock buttons %}
