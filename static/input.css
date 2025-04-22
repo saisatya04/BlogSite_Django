@@ -1,6 +1,19 @@
+@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@theme {
+  --inset-shadow-underline: inset 0 -2px 0 0;
+}
+
+.title {
+  @apply text-6xl font-semibold tracking-tight;
+}
+
+.subtitle {
+  @apply text-4xl font-semibold tracking-tight;
+}
 
 .button {
   @apply font-medium px-4 py-2 rounded-md;
