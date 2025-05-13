@@ -224,6 +224,9 @@
   .mt-1 {
     margin-top: calc(var(--spacing) * 1);
   }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
@@ -257,9 +260,6 @@
   .inline-block {
     display: inline-block;
   }
-  .table {
-    display: table;
-  }
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
@@ -283,12 +283,6 @@
   }
   .max-w-lg {
     max-width: var(--container-lg);
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -315,18 +309,11 @@
       margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
-  .rounded {
-    border-radius: 0.25rem;
-  }
   .rounded-md {
     border-radius: var(--radius-md);
   }
   .rounded-sm {
     border-radius: var(--radius-sm);
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
   }
   .border-2 {
     border-style: var(--tw-border-style);
@@ -346,80 +333,8 @@
   .border-gray-300 {
     border-color: var(--color-gray-300);
   }
-  .bg-\[\#AAD8\] {
-    background-color: #AAD8;
-  }
-  .bg-\[\#AAEAD8\] {
-    background-color: #AAEAD8;
-  }
-  .bg-\[\#CCD0D8\] {
-    background-color: #CCD0D8;
-  }
-  .bg-\[\#CCD8\] {
-    background-color: #CCD8;
-  }
-  .bg-\[\#CCEAD8\] {
-    background-color: #CCEAD8;
-  }
-  .bg-\[\#CCFFD8\] {
-    background-color: #CCFFD8;
-  }
-  .bg-\[\#CCFFFF\] {
-    background-color: #CCFFFF;
-  }
-  .bg-\[\#DAD0D8\] {
-    background-color: #DAD0D8;
-  }
-  .bg-\[\#DAEAD8\] {
-    background-color: #DAEAD8;
-  }
-  .bg-\[\#DDD0D8\] {
-    background-color: #DDD0D8;
-  }
-  .bg-\[\#DDEAD8\] {
-    background-color: #DDEAD8;
-  }
-  .bg-\[\#DEAD8\] {
-    background-color: #DEAD8;
-  }
-  .bg-\[\#EAD0D8\] {
-    background-color: #EAD0D8;
-  }
-  .bg-\[\#EAD8\] {
-    background-color: #EAD8;
-  }
-  .bg-\[\#EADAD8\] {
-    background-color: #EADAD8;
-  }
-  .bg-\[\#EAEAD8\] {
-    background-color: #EAEAD8;
-  }
-  .bg-\[\#EEAD8\] {
-    background-color: #EEAD8;
-  }
-  .bg-\[\#EEEAD8\] {
-    background-color: #EEEAD8;
-  }
-  .bg-\[\#FAEAD8\] {
-    background-color: #FAEAD8;
-  }
-  .bg-\[\#FCEAD8\] {
-    background-color: #FCEAD8;
-  }
   .bg-\[\#FFFDFD\] {
     background-color: #FFFDFD;
-  }
-  .bg-\[\#FFFDFF\] {
-    background-color: #FFFDFF;
-  }
-  .bg-\[\#FFFFFF\] {
-    background-color: #FFFFFF;
-  }
-  .bg-\[\#FFFFF\] {
-    background-color: #FFFFF;
-  }
-  .bg-\[\#FaEAD8\] {
-    background-color: #FaEAD8;
   }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
@@ -492,13 +407,6 @@
   .uppercase {
     text-transform: uppercase;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .shadow {
-    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .shadow-md {
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -506,10 +414,6 @@
   .shadow-sm {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .hover\:underline {
     &:hover {
@@ -536,21 +440,9 @@
       }
     }
   }
-  .focus\:border {
-    &:focus {
-      border-style: var(--tw-border-style);
-      border-width: 1px;
-    }
-  }
   .focus\:border-emerald-500 {
     &:focus {
       border-color: var(--color-emerald-500);
-    }
-  }
-  .focus\:ring {
-    &:focus {
-      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
   .focus\:ring-1 {
@@ -823,11 +715,6 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-tracking {
   syntax: "*";
   inherits: false;
@@ -856,7 +743,6 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
       --tw-tracking: initial;
       --tw-leading: initial;
     }
