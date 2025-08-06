@@ -1,9 +1,13 @@
-{% extends "app/base.html"%}
+{% extends "base.html"%}
 
 {% load widget_tweaks %}
 {% load allauth account %}
 
-{% block content %}
+{%block title%}
+Login
+{%endblock title%}
+
+{% block base_content %}
 <main class="max-w-lg mx-auto mt-10">
     <div class="flex flex-col bg-gray-800 text-white p-6 lg:p-16 rounded-md">
         <div class="flex flex-col text-center">
@@ -15,7 +19,7 @@
             {% if form.errors %}
                 {% for field, errors in form.errors.items %}
                     {% for error in errors %}
-                        <div class="p-2 my-2 text-sm text-red-700 bg-red-50 rounded-md border-red-30 border">
+                        <div class="error">
                             {{ error }}
                         </div>
                     {%endfor%}
@@ -51,4 +55,4 @@
         </form>
     </div>
 </main>
-{% endblock content %}
+{% endblock base_content %}

@@ -1,4 +1,10 @@
-{% extends "app/base.html" %} {% block content %}
+{% extends "base.html" %} 
+
+{%block title%}
+Delete - Articles
+{%endblock title%}
+
+{% block base_content %}
 <main class="max-w-2xl mx-auto flex flex-col items-center mt-10">
 <h1 class="subtitle">Delete Article</h1>
 <p class="text-lg mb-6">Are you sure want to delete "{{ article.title }}"</p>
@@ -10,4 +16,4 @@
 </form>
 
 </main>
-{% endblock content %}
+{% endblock base_content %}

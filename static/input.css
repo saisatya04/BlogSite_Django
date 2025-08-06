@@ -31,15 +31,19 @@
   @apply rounded-md border border-red-400 bg-red-200 px-4 py-2 font-medium text-red-800 hover:bg-red-300 focus:ring-2 focus:ring-red-200 focus:ring-offset-2 focus:outline-none;
 }
 
-.EasyMDEContainer, textarea {
+.EasyMDEContainer,
+textarea {
   @apply rounded-md border-gray-200 border-2 text-base leading-6;
 }
 
-.EasyMDEContainer, .CodeMirror, textarea {
+.EasyMDEContainer,
+.CodeMirror,
+textarea {
   @apply !border-none !bg-inherit;
 }
 
-.EasyMDEContainer:has(textarea:focus), textarea:focus {
+.EasyMDEContainer:has(textarea:focus),
+textarea:focus {
   @apply ring-1 ring-emerald-500 border-emerald-500;
 }
 
@@ -47,4 +51,26 @@
   @apply p-2 rounded-md w-full;
 }
 
+.error {
+  @apply p-2 my-2 text-sm text-red-700 bg-red-50 rounded-md border-red-300 border;
+}
 
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+input[type="radio"] {
+  @apply text-emerald-800 ml-1 h-4 w-4 focus:ring-emerald-500;
+}
+
+.allauth-form input[type="email"] {
+  @apply w-full rounded-md text-black bg-white h-10;
+}
+
+.allauth-form p:has(input[type="email"]) {
+  @apply text-left;
+}
+
+.allauth-form p:has(input[type="email"]) label {
+  @apply font-bold;
+}
