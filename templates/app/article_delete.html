@@ -8,10 +8,11 @@ Delete - Articles
 <main class="max-w-2xl mx-auto flex flex-col items-center mt-10">
 <h1 class="subtitle">Delete Article</h1>
 <p class="text-lg mb-6">Are you sure want to delete "{{ article.title }}"</p>
-<form method="POST" class="flex items-center gap-4">
+
+<form method="POST" class="flex items-center gap-4" action="{% url 'delete_article' article.id %}">
   {% csrf_token %}
   <button type="submit" class="button danger">Yes, Delete it</button>
-  <a href="{% url 'home' %}" class="button secondary"> {% include "svgs/arrow-left.svg" with class="inline-block w-6 h-6 mr-2 mt-[-2px]" %} No, take me back</a>
+  <a href="{% url 'update_article' article.id %}" class="button secondary"> {% include "svgs/arrow-left.svg" with class="inline-block w-6 h-6 mr-2 mt-[-2px]" %} No, take me back</a>
 
 </form>
 

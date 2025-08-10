@@ -14,6 +14,9 @@
     />
     <link rel="stylesheet" href="{%static 'output.css'%}" />
     <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+
     {%block extra_head%}
     {%endblock extra_head%}
   </head>
@@ -56,7 +59,18 @@
       </div>
     </nav>
     <div class="p-2 md:p-4 lg:p-6">
-      {% block base_content %} {% endblock base_content %}
+      <div class="flex justify-center mt-2 text-gray-500 font-bold">
+        {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li class="border p-2 border-gray-400 bg-gray-200 rounded-md {{message.tags}}">{{message}}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      {% block base_content %}
+
+      {% endblock base_content %}
     </div>
     {%endblock body%}
     {%block extra_body%}

@@ -51,7 +51,7 @@ textarea:focus {
   @apply p-2 rounded-md w-full;
 }
 
-.error {
+.error, .destructive {
   @apply p-2 my-2 text-sm text-red-700 bg-red-50 rounded-md border-red-300 border;
 }
 
@@ -73,4 +73,16 @@ input[type="radio"] {
 
 .allauth-form p:has(input[type="email"]) label {
   @apply font-bold;
+}
+
+.article-status-draft {
+  @apply bg-gray-200;
+}
+
+.article-status-published {
+  @apply bg-green-200;
+}
+
+.article-status-inprogress {
+  @apply bg-amber-200;
 }

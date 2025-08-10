@@ -8,7 +8,12 @@ from django.shortcuts import render, redirect
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-
+from typing import Any
+from django.contrib.messages.views import SuccessMessageMixin
+from django.db.models.query import QuerySet
+from django.contrib import messages
+from django.http import HttpRequest, HttpResponse
+import time
 
 # def home(request):
 #     articles = Article.objects.all()
@@ -43,9 +48,15 @@ class ArticleListView(LoginRequiredMixin, ListView):
     template_name = "app/home.html"
     model = Article
     context_object_name = "articles"
+    paginate_by = 5
 
-    def get_queryset(self):
-        return Article.objects.filter(creator=self.request.user).order_by("-created_at")
+    def get_queryset(self) -> QuerySet[Any]:
+        time.sleep(2)
+        search = self.request.GET.get("search") 
+        queryset = super().get_queryset().filter(creator=self.request.user)
+        if search:
+            queryset = queryset.filter(title__search=search)
+        return queryset.order_by("-created_at")
 
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
@@ -70,11 +81,16 @@ class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.request.user == self.get_object().creator
 
 
-class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     template_name = "app/article_delete.html"
     model = Article
     success_url = reverse_lazy("home")
+    # success_message = "Article deleted successfully."
     context_object_name = "article"
 
     def test_func(self):
         return self.request.user == self.get_object().creator
+    
+    def post(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
+        messages.success(request, "Article deleted successfully.", extra_tags="destructive")
+        return super().post(request, *args, **kwargs)
