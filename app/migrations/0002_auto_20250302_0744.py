@@ -3,7 +3,8 @@
 from django.db import migrations
 from django.contrib.auth import get_user_model
 from django.utils import timezone
-
+from allauth.account.models import EmailAddress
+from allauth.account.utils import user_email
 
 def create_superuser(apps, scmkhema_editor):
     User = get_user_model()
@@ -19,6 +20,12 @@ def create_superuser(apps, scmkhema_editor):
     )
     superuser.save()
 
+    email, created = EmailAddress.objects.get_or_create(
+        user=superuser, email=user_email(superuser)
+    )
+
+    email.verified = True
+    email.save()
 
 class Migration(migrations.Migration):
 

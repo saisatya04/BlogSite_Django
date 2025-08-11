@@ -35,7 +35,7 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             "classes": ("wide",), # ("wide", "collapse") {Note: Give a title to use this. makes the section collapsible}
-            "fields": ("email", "password1", "password2")
+            "fields": ("email", "password1")
         }),
     )
     list_display = ("email", "is_staff", "is_active")
