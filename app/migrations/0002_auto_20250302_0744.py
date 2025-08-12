@@ -18,6 +18,7 @@ def create_superuser(apps, scmkhema_editor):
         password="example_password",
         last_login=timezone.now(),
     )
+    
     superuser.save()
 
     email, created = EmailAddress.objects.get_or_create(

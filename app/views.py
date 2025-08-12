@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 # from app.forms import CreateArticleForm
 # the above import is for function based views
 
-# These imports are for class based views
+# These imports are for class based views.
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
