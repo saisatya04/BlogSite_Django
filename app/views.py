@@ -48,7 +48,7 @@ class ArticleListView(LoginRequiredMixin, ListView):
     template_name = "app/home.html"
     model = Article
     context_object_name = "articles"
-    paginate_by = 5
+    paginate_by = 6
 
     def get_queryset(self) -> QuerySet[Any]:
         time.sleep(2)
